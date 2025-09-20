@@ -1,0 +1,105 @@
+/* ViteC.css */
+
+.vite-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0d0f1a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center box for the logo */
+.logo-box {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #6e46ff, #4732c4, #ff8c42, #ff3c42);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* You would place the actual Vite logo SVG here */
+}
+
+/* Base styles for the animated lines */
+.animated-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #6e46ff, #ff8c42);
+    opacity: 0;
+    animation: line-anim 8s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.line-1 {
+    top: 50%;
+    left: 0;
+    width: 60%;
+    transform: translateY(-50%) rotate(-10deg);
+}
+
+.line-2 {
+    bottom: 20%;
+    left: 10%;
+    width: 40%;
+    transform: rotate(5deg);
+    animation-delay: 2s;
+}
+
+.line-3 {
+    top: 30%;
+    right: 0;
+    width: 50%;
+    transform: rotate(20deg);
+    animation-delay: 4s;
+}
+
+/* Keyframes for the line animation */
+@keyframes line-anim {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+/* Styles for the text labels */
+.text-label {
+    position: absolute;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: float 5s ease-in-out infinite;
+}
+
+.jsx {
+    top: 35%;
+    left: 15%;
+}
+
+.svelte {
+    top: 55%;
+    left: 10%;
+}
+
+.sass {
+    top: 70%;
+    left: 12%;
+}
+
+/* Keyframes for floating text animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}

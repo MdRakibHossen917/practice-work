@@ -1,0 +1,86 @@
+.more-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 2rem;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ব্যাকগ্রাউন্ড প্যাটার্নের জন্য */
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* এটি একটি সাধারণ গ্রিড ব্যাকগ্রাউন্ডের উদাহরণ। Vapi.ai-এর মতো হুবহু গ্রাফিক্স পেতে আপনাকে একটি কাস্টম SVG ব্যবহার করতে হবে। */
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.05)" text-anchor="middle">0</text></svg>');
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  z-index: 1;
+}
+
+/* কন্টেন্ট সেকশনের জন্য */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.subtitle {
+  color: #8c8c8c;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* আইকন গ্রিডের জন্য */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.app-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.app-icon {
+  width: 40px;
+  height: 40px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* হোভার ইফেক্ট */
+.app-icon-wrapper:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.app-icon-wrapper:hover .app-icon {
+  filter: grayscale(0%);
+  opacity: 1;
+}

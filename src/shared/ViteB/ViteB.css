@@ -1,0 +1,187 @@
+/* Ensure Tailwind is correctly set up in your project's main CSS file (e.g., index.css)
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+*/
+
+.viteb-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #1a0a38; /* Dark base color */
+    overflow: hidden; /* Hide any overflowing animated elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif; /* Use a suitable modern font */
+    color: #fff;
+}
+
+.background-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 15% 50%, rgba(68, 16, 126, 0.4) 0%, transparent 40%),
+                radial-gradient(circle at 85% 50%, rgba(10, 0, 100, 0.3) 0%, transparent 40%),
+                radial-gradient(circle at 50% 10%, rgba(20, 10, 50, 0.5) 0%, transparent 30%);
+    opacity: 1; /* Adjust opacity as needed */
+    pointer-events: none; /* Allows interaction with content underneath */
+}
+
+.content-wrapper {
+    position: relative; /* To layer content above the background */
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px; /* Limit content width */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem; /* Space between top buttons and logo section */
+}
+
+/* Top Buttons */
+.top-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: -10vh; /* Adjust to position buttons higher */
+}
+
+.get-started-button, .github-button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 9999px; /* Fully rounded */
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.get-started-button {
+    background-color: #8B5CF6; /* Purple-ish */
+    color: white;
+    border: 1px solid transparent;
+}
+.get-started-button:hover {
+    background-color: #9f7aea; /* Lighter purple on hover */
+}
+
+.github-button {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.github-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.github-icon {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5rem;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5rem; /* Space between left lines, logo, and right lines */
+}
+
+.lines-left, .lines-right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align labels to the right for left side */
+    gap: 2rem;
+    position: relative;
+    /* This is where you'd implement the animated lines using pseudo-elements, SVGs, or canvas */
+    /* For simplicity, we're just positioning labels for now */
+}
+
+.lines-left::before, .lines-right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Placeholder for actual line drawing */
+    /* You would draw lines from labels to the center logo using SVG <path> or complex CSS */
+}
+
+.lines-left {
+    align-items: flex-end;
+}
+.lines-right {
+    align-items: flex-start;
+}
+
+
+.file-label {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    color: #b0b0b0;
+    position: relative;
+    left: 20%; /* Example offset */
+}
+/* Specific positioning for labels to mimic the image */
+.file-label-jsx { top: -20px; left: 10%; color: #FCD34D;} /* Example orange/yellow tint */
+.file-label-svelte { top: 0px; left: 15%; color: #EF4444;} /* Example red tint */
+.file-label-sass { top: 20px; left: 20%; color: #8B5CF6;} /* Example purple tint */
+
+
+.vite-logo-wrapper {
+    width: 150px; /* Size of the logo container */
+    height: 150px;
+    background-color: #3f1e7d; /* Dark purple background for the logo square */
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 15px rgba(255,255,255,0.1); /* Soft shadow and inner glow */
+    transform: rotateX(20deg) rotateY(-20deg) translateZ(10px); /* Simple 3D tilt */
+    position: relative;
+}
+
+.vite-logo-placeholder {
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(135deg, #a78bfa, #f472b6, #6EE7B7); /* Multi-color gradient for the logo itself */
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2z" fill="white"/></svg>') no-repeat center; /* Basic triangle mask for Vite logo shape */
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2z" fill="white"/></svg>') no-repeat center;
+    background-size: contain;
+    background-position: center;
+}
+
+/* Responsiveness (optional, but good practice) */
+@media (max-width: 768px) {
+    .content-wrapper {
+        gap: 2rem;
+    }
+    .top-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .logo-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .lines-left, .lines-right {
+        align-items: center;
+        width: 100%;
+    }
+    .file-label {
+        left: 0;
+        top: auto;
+    }
+    .vite-logo-wrapper {
+        transform: none; /* Remove 3D tilt on small screens */
+    }
+}
