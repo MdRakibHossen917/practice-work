@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from 'react';
+import PattViraP5Sketch from '../../Components/PattViraP5Sketch';
+ 
 
 const New = () => {
     const [binaryPattern, setBinaryPattern] = useState([]);
     const [coloredDots, setColoredDots] = useState([]);
 
     useEffect(() => {
-        // Create 3D cube-like binary pattern
+        // 3D কিউব-এর মতো বাইনারি প্যাটার্ন তৈরি করুন
         const createBinaryPattern = () => {
             const pattern = [];
             const rows = 35;
             const cols = 45;
             
-            // Create the cube structure with binary numbers
+            // বাইনারি সংখ্যা দিয়ে কিউবের কাঠামো তৈরি করুন
             for (let row = 0; row < rows; row++) {
                 const currentRow = [];
                 for (let col = 0; col < cols; col++) {
-                    // Create cube-like depth effect
+                    // কিউবের মতো গভীরতার প্রভাব তৈরি করুন
                     const centerX = cols / 2;
                     const centerY = rows / 2;
                     const distanceFromCenter = Math.sqrt(
                         Math.pow(col - centerX, 2) + Math.pow(row - centerY, 2)
                     );
                     
-                    // Create 3 cube faces with different depths
+                    // বিভিন্ন গভীরতা সহ 3টি কিউব ফেস তৈরি করুন
                     const cubeDepth = Math.sin(row * 0.3) * Math.cos(col * 0.2) * 3;
                     const opacity = Math.max(0.1, 0.6 - (distanceFromCenter / 40));
                     
@@ -39,12 +41,12 @@ const New = () => {
             setBinaryPattern(pattern);
         };
 
-        // Create colored dots at specific positions
+        // নির্দিষ্ট অবস্থানে রঙিন ডট তৈরি করুন
         const createColoredDots = () => {
             const dots = [];
             const colors = ['#10b981', '#3b82f6', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ffffff'];
             
-            // Add random colored dots throughout the pattern
+            // প্যাটার্ন জুড়ে র্যান্ডম রঙিন ডট যুক্ত করুন
             for (let i = 0; i < 25; i++) {
                 dots.push({
                     id: i,
@@ -62,7 +64,7 @@ const New = () => {
         createBinaryPattern();
         createColoredDots();
 
-        // Regenerate some binary values periodically
+        // পর্যায়ক্রমে কিছু বাইনারি মান পুনরুত্পাদন করুন
         const interval = setInterval(() => {
             setBinaryPattern(prev => 
                 prev.map(row => 
@@ -79,8 +81,15 @@ const New = () => {
 
     return (
         <div className="relative min-h-screen bg-black text-white overflow-hidden flex items-center justify-center">
-            {/* 3D Binary Pattern Background */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* Patt Vira's p5.js Sketch কে ওভারলে ব্যাকগ্রাউন্ড হিসাবে যোগ করা হয়েছে */}
+            {/* z-index: 10 নিশ্চিত করে যে p5.js ক্যানভাস বাইনারি প্যাটার্নের উপরে থাকবে */}
+            <div className="absolute inset-0 z-10 pointer-events-none">
+                <PattViraP5Sketch />
+            </div>
+            <div><h1>New fdghdfhdfgdfsd</h1></div>
+
+            {/* 3D বাইনারি প্যাটার্ন ব্যাকগ্রাউন্ড */}
+            <div className="absolute inset-0 flex items-center justify-center z-0"> {/* p5.js এর চেয়ে কম z-index */}
                 <div 
                     className="grid gap-0"
                     style={{
@@ -112,8 +121,8 @@ const New = () => {
                 </div>
             </div>
 
-            {/* Colored Floating Dots */}
-            <div className="absolute inset-0">
+            {/* রঙিন ভাসমান ডট */}
+            <div className="absolute inset-0 pointer-events-none z-20"> {/* p5.js এবং বাইনারি প্যাটার্নের চেয়ে উচ্চতর z-index */}
                 {coloredDots.map(dot => (
                     <div
                         key={dot.id}
@@ -127,15 +136,14 @@ const New = () => {
                             animation: `float3D ${dot.animationDuration}s ease-in-out infinite`,
                             animationDelay: `${dot.animationDelay}s`,
                             boxShadow: `0 0 20px ${dot.color}40`,
-                            zIndex: 10
                         }}
                     />
                 ))}
             </div>
 
-            {/* Cube Edge Highlights */}
-            <div className="absolute inset-0 pointer-events-none">
-                {/* Top face highlight */}
+            {/* কিউব এজ হাইলাইট */}
+            <div className="absolute inset-0 pointer-events-none z-20"> {/* ডটগুলির মতো একই z-index */}
+                {/* টপ ফেস হাইলাইট */}
                 <div 
                     className="absolute"
                     style={{
@@ -149,7 +157,7 @@ const New = () => {
                     }}
                 />
                 
-                {/* Left face highlight */}
+                {/* বাম ফেস হাইলাইট */}
                 <div 
                     className="absolute"
                     style={{
@@ -163,7 +171,7 @@ const New = () => {
                     }}
                 />
 
-                {/* Right face highlight */}
+                {/* ডান ফেস হাইলাইট */}
                 <div 
                     className="absolute"
                     style={{
@@ -178,15 +186,15 @@ const New = () => {
                 />
             </div>
 
-            {/* Ambient Glow Effects */}
-            <div className="absolute inset-0 pointer-events-none">
+            {/* অ্যাম্বিয়েন্ট গ্লো ইফেক্ট */}
+            <div className="absolute inset-0 pointer-events-none z-20"> {/* ডটগুলির মতো একই z-index */}
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500/5 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-500/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
             </div>
 
-            {/* Your content can go here */}
-            <div className="relative z-20 text-center">
+            {/* আপনার কন্টেন্ট এখানে যাবে */}
+            <div className="relative z-30 text-center"> {/* কন্টেন্টের জন্য সর্বোচ্চ z-index */}
                 <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
                     Binary code
                 </h1>
@@ -195,7 +203,7 @@ const New = () => {
                 </p>
             </div>
 
-            {/* Custom Animations */}
+            {/* কাস্টম অ্যানিমেশন */}
             <style jsx>{`
                 @keyframes float3D {
                     0%, 100% { 
