@@ -1,9 +1,9 @@
 import React from "react";
-import "./About.css"; // CSS import korbo
+import "./VapiCard.css"; // CSS file import
 
-const About = () => {
+const VapiCard = () => {
   return (
-    <div className="about-container">
+    <div className="vapi-container">
       {/* Background Video */}
       <video className="bg-video" autoPlay loop muted playsInline>
         <source
@@ -15,19 +15,17 @@ const About = () => {
       {/* Overlay */}
       <div className="overlay"></div>
 
-      {/* Content */}
-      <div className="about-content">
-        <h1>See the Unseen</h1>
+      {/* Card Content */}
+      <div className="vapi-content">
+        <h1>⚡ Vapi AI Platform</h1>
         <p>
-          Discover the unseen vulnerabilities and secure your business with
-          advanced solutions.
+          Build, deploy, and scale AI applications faster with powerful APIs and
+          a seamless developer experience.
         </p>
-        <button>Learn More</button>
+        <button>Explore More</button>
       </div>
-
-      
     </div>
   );
 };
 
-export default About;
+export default VapiCard;
