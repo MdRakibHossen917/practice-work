@@ -1,0 +1,636 @@
+/* Glyphic.css */
+
+/* Base Styles */
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.global-styles {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+
+.navbar.w-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+/* Main Wrapper */
+.main-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Section Styles */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relative-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container-xlarge {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.padding-global {
+  padding: 2rem 0;
+}
+
+.padding-section-start {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Hero Section */
+.home-hero {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.banner-above-hero {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.glyphic-x-pavilion-logo-banner {
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.hero-lottie-heading-for-banner {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.banner-download-annotation {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+/* G2 Logo */
+.g2-logo {
+  margin-bottom: 2rem;
+}
+
+.link-block-3 {
+  display: inline-block;
+}
+
+.image-7 {
+  height: 30px;
+  width: auto;
+}
+
+/* Heading Styles */
+.heading-align-center-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.max-width-text-hero-home {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heading-style-h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.text-color-grey-900 {
+  color: #1a1a1a !important;
+}
+
+.spacer-small {
+  height: 1rem;
+}
+
+.spacer-large {
+  height: 2rem;
+}
+
+.spacer-xxsmall {
+  height: 0.5rem;
+}
+
+.max-width-text-xxl {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.text-size-medium-sub-headline {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.white_emphasis_2 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* CTA Styles */
+.cta-alt {
+  margin-bottom: 2rem;
+}
+
+.text-weight-medium {
+  font-weight: 500;
+}
+
+.text-color-alternate {
+  color: #4d65ff !important;
+}
+
+/* Form Styles */
+.form-block-2 {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.text-field-2 {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 250px;
+  background: white;
+}
+
+.text-field-2:focus {
+  outline: none;
+  border-color: #4d65ff;
+  box-shadow: 0 0 0 3px rgba(77, 101, 255, 0.1);
+}
+
+/* Button Styles */
+.button-wrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button.is-yellow {
+  background: #ffd700;
+  color: #1a1a1a;
+}
+
+.button.is-yellow:hover {
+  background: #ffed4a;
+  transform: translateY(-2px);
+}
+
+.button.white {
+  background: white;
+  color: #1a1a1a;
+}
+
+.button.white:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.button.blue {
+  background: #4d65ff;
+  color: white;
+}
+
+.button.blue:hover {
+  background: #3a52e0;
+  transform: translateY(-2px);
+}
+
+/* Hero Lottie Section */
+.hero-lottie-wrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin-top: 2rem;
+}
+
+.hero-content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-items-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-lottie-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.hero-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.hero-item {
+  position: relative;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero-card._2,
+.hero-card._3 {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-step {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-visual-wrapper {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.hero-visual-1 {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+}
+
+.hero-item-content {
+  text-align: center;
+}
+
+.heading-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.icon-wrapper.lg {
+  width: 48px;
+  height: 48px;
+  background: rgba(77, 101, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper.lg svg {
+  width: 24px;
+  height: 24px;
+  color: #4d65ff;
+}
+
+.card-heading-lg {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.hero-item-content p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Lottie Animations */
+.hero-lottie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-lottie.middle {
+  z-index: 1;
+}
+
+.hero-circle-lottie {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+}
+
+.hero-bg-lottie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Layout Classes */
+.w-layout-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.w-layout-cell {
+  flex: 1;
+}
+
+.cell-5 {
+  flex: 5;
+}
+
+.cell-4 {
+  flex: 4;
+  text-align: right;
+}
+
+/* Utility Classes */
+.hide {
+  display: none !important;
+}
+
+.w-embed {
+  position: relative;
+}
+
+.w-button {
+  display: inline-block;
+}
+
+.w-input {
+  display: block;
+  width: 100%;
+}
+
+.w-form-done,
+.w-form-fail {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.w-form-done {
+  background: #d4edda;
+  color: #155724;
+}
+
+.w-form-fail {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.link {
+  color: #4d65ff;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 991px) {
+  .container-xlarge {
+    padding: 0 1.5rem;
+  }
+  
+  .heading-style-h1 {
+    font-size: 2.5rem;
+  }
+  
+  .text-size-medium-sub-headline {
+    font-size: 1.25rem;
+  }
+  
+  .hero-items {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .hero-lottie-wrapper {
+    height: auto;
+    min-height: 400px;
+  }
+  
+  .w-layout-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cell-4 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container-xlarge {
+    padding: 0 1rem;
+  }
+  
+  .heading-style-h1 {
+    font-size: 2rem;
+  }
+  
+  .padding-section-start {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .button-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .form {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .text-field-2 {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .hide-mobile-landscape {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .heading-style-h1 {
+    font-size: 1.75rem;
+  }
+  
+  .text-size-medium-sub-headline {
+    font-size: 1.125rem;
+  }
+  
+  .hero-card {
+    padding: 1.5rem;
+  }
+  
+  .hero-lottie-heading {
+    font-size: 1.5rem;
+  }
+  
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Text Alignment */
+.shorter-mobile {
+  max-width: 100%;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+}
+
+/* Focus States for Accessibility */
+.button:focus-visible,
+.text-field-2:focus-visible {
+  outline: 2px solid #4d65ff;
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.button[data-wait] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Animation Classes */
+[data-animation-type="lottie"] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-animation-type="lottie"].ix2-initial-state {
+  opacity: 1;
+}
+
+/* Webflow Specific Classes */
+.w-nav {
+  /* Webflow navigation styles */
+}
+
+.w-richtext {
+  /* Webflow rich text styles */
+}
+
+.w-dropdown {
+  /* Webflow dropdown styles */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
